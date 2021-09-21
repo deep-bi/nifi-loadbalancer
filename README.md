@@ -37,7 +37,7 @@ e.g. sending all HTTP requests from a particular user to the same webserver back
 
 #### Advanced
 
-The property "Attribute Hash Lifetime" is only used when the loadb alancing strategy is set to "Attribute Hash",
+The property "Attribute Hash Lifetime" is only used when the load balancing strategy is set to "Attribute Hash",
 and controls for how long an attribute hash is stored in cache since it was last seen. Setting this to a lower
 value may save you some memory, but risks sending a flow file to the wrong destination if the time between
 two flow files with the same attribute hash is greater than the lifetime specified.
