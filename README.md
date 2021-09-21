@@ -4,7 +4,9 @@ The purpose of this processor is to allow an administrator to route flow files t
 depending on if a given downstream destination is "alive" or not. The processor accepts dynamic properties which
 are used to define a system command line "health check", for example:
 
-`ping -c 1 1.2.3.4`
+```bash
+ping -c 1 1.2.3.4
+```
 
 Assuming the downstream destination is 1.2.3.4, then the above command is run every 5 seconds. As long as the 
 command exits with a `0` return code, the destination is considered alive and accepting flow files. Should 1.2.3.4
@@ -24,6 +26,17 @@ chosen, the processor will hash the flow flile attribute specified in the "Attri
 flow files whose attributes hash to the same value will be sent to the same destination provided said destination
 still responds to health checks. This strategy is effective in situations when session "stickiness" is required,
 e.g. sending all HTTP requests from a particular user to the same webserver backend
+
+#### Building NAR file
+
+In repository root directory run `mvn clean package`. The NAR file will be located under: 
+`nifi-LoadBalancer-nar/target/nifi-LoadBalancer-nar-1.0.nar`. Note that version `1.0` can change in the future.
+
+Important notes:
+
+- `SNAPSHOT` in version number is not allowed as the enforcer plugin does not allow the builds of `SNAPSHOT` code into NAR
+- `groovy-eclipse-batch` in `pom.xml` must be provided explicitly, as required version HTTP address returns 403 forbidden
+- Use `JDK 1.8` for builds
 
 #### Qucikstart Video Demo
 
