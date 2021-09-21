@@ -17,6 +17,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <properties>
         <nifi.version>1.13.2</nifi.version>
+        <nar.version>1.0</nar.version>
         <kotlin.version>1.3.72</kotlin.version>
     </properties>
 
