@@ -45,7 +45,7 @@ Important notes:
 
 #### Installation
 
-- Download the NAR file https://github.com/dvas0004/nifi-loadbalancer/blob/master/nifi-LoadBalancer-nar/target/nifi-LoadBalancer-nar-1.0-SNAPSHOT.nar
+- Download the NAR file for your NiFi version from https://github.com/deep-bi/nifi-loadbalancer/releases
 - Move the NAR file to the "lib" directory of your NiFi installation
 
 #### Advanced
